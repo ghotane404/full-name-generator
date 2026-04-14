@@ -15,46 +15,21 @@ public class FullNameApplication {
         System.out.print("Last Name: ");
         String lastName = scanner.nextLine();
 
-        System.out.println("Suffix: ");
+        System.out.print("Suffix: ");
         String suffix = scanner.nextLine();
-
+        // removes any white space user enters before or after
         firstName = firstName.trim();
         middleName = middleName.trim();
         lastName = lastName.trim();
         suffix = suffix.trim();
-
-        if (middleName.isEmpty()) {
-            middleName = "";
+        // after all the whitespace has been removed, will check to see if the string is empty or not
+        if (!middleName.isEmpty()) {
+            middleName = middleName + " "; // if string exists for middle name then will add the middle name with space
         }
-        else {
-            String middleNameSpace = " ";
-            middleName = middleName + middleNameSpace;
-        }
-
         if (!suffix.isEmpty()) {
-            String suffixComma = ", ";
-            suffix = suffixComma + suffix;
+            suffix = " " + suffix; // if string exists for suffix then will add the suffix with space before
         }
-        else{
-            suffix = "";
-        }
+        // prints the full name. Manually adding space between first and last name in case user doesn't have a middle name
         System.out.print("Full Name: " + firstName + " " + middleName + lastName + suffix);
     }
 }
-
-//        You will prompt the user to enter the parts of their name. You will then create a new
-//        string that holds the user’s full name.
-//        String[] cities = input.split("\\|");
-
-//        Glen Williams
-//        Glen C. Williams
-//        Glen Williams, PhD
-//        Glen C. Williams, PhD
-//        String[] fullName = {firstName, middleName, lastName, suffix};
-//        System.out.println(Arrays.toString(fullName));
-//        function to use:
-//        username.trim().toUpperCase()
-
-//        fullName = input.split(Pattern.quote("|"));
-
-
